@@ -18,9 +18,13 @@ public class romanNumber {
 	    int index = 0;
 	    int index_before = 0;
 		
-		for(int i = RN.length()-1; i <= 0; i--) {
+		for(int i = RN.length()-1; i >= 0; i--) {
 			char convertToDecimal = romanNumber.charAt(i);
-			char convertToDecimal_before = romanNumber.charAt(i-1);
+			char convertToDecimal_before = ' ';
+			
+			if(i != 0) {
+				convertToDecimal_before = romanNumber.charAt(i-1);
+			}
 			
 			if(convertToDecimal == ' ') {
 				return decimalNumber;
@@ -33,11 +37,13 @@ public class romanNumber {
 							break;
 						}
 					}
-					decimalNumber += Rom[index];
+					decimalNumber += value[index];
 				}
+				
 			}
 			if(convertToDecimal_before != ' ') {
 				//Sacamos los valores
+				
 				for(int j = 0; j < Rom.length-1;j++) {
 					if(convertToDecimal == Rom[j]) {
 						index = j;
@@ -55,6 +61,7 @@ public class romanNumber {
 					decimalNumber -= valor_before;
 				}
 			}
+			
 		}
 		return decimalNumber;
 	}
@@ -62,7 +69,7 @@ public class romanNumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(convierte("V"));
+		System.out.println(convierte("IV"));
 	}
 
 }
