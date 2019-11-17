@@ -8,13 +8,31 @@ import org.junit.Test;
 public class BisiestosTest {
 
 	@Test
-	public void testAnyoBisiesto() {
+	public void testAnyoBisiesto2000() {
 		int anyo = 2000;
-		assertEquals("", true, Bisiestos.esBisiesto(anyo));
+		assertEquals("esperamos la salida true, para 2000", true, Bisiestos.esBisiesto(anyo));
 	}
 	
 	@Test
-	public void testAnyoErronea() {
+	public void testAnyoBisiesto1044() {
+		int anyo = 1044;
+		assertEquals("esperamos la salida true, para 1044", true, Bisiestos.esBisiesto(anyo));
+	}
+	
+	@Test
+	public void testAnyoNoBisiesto1999() {
+		int anyo = 1999;
+		assertEquals("1999, esperamos no bisiesto", false, Bisiestos.esBisiesto(anyo));
+	}
+	
+	@Test
+	public void testAnyoNoBisiesto1000() {
+		int anyo = 1000;
+		assertEquals("1000, esperamos no bisiesto", false, Bisiestos.esBisiesto(anyo));
+	}
+	
+	@Test
+	public void testAnyoErroneo() {
 		int anyo = -2;
 		try {
 			Bisiestos.esBisiesto(anyo);
@@ -25,8 +43,13 @@ public class BisiestosTest {
 	}
 	
 	@Test
-	public void testAnyoNoBisiesto() {
-		int anyo = 1999;
-		assertEquals("", false, Bisiestos.esBisiesto(anyo));
+	public void testAnyoCero() {
+		int anyo = 0;
+		try {
+			Bisiestos.esBisiesto(anyo);
+		}catch (InvalidParameterException e){
+			return;
+		}
+		fail("InvalidParameterException expected");
 	}
 }
