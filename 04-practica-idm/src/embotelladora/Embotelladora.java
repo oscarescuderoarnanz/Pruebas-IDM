@@ -55,6 +55,6 @@ public class Embotelladora {
 	}
 	
 	public static void main(String[] args) throws NoSolution {
-		calculaBotellasPequenas(3,3,13);
+		calculaBotellasPequenas(0,0,0);
     }
 }
