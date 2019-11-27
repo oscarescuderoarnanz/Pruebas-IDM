@@ -37,6 +37,6 @@ public class DescuentoBlackFriday {
 	}
 	
 	public static void main(String[] args) throws InvalidParameterException{
-		System.out.println(PrecioFinal(3.0,10.0));
+		System.out.println(PrecioFinal(3.0,-0.0));
     }
 }
