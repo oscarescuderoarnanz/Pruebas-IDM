@@ -1,6 +1,5 @@
 package descuento_blackfriday;
 
-import java.security.InvalidParameterException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,7 +10,7 @@ public class DescuentoBlackFriday {
 	// Devuelve: el precio final teniendo en cuenta que si es black friday (29 de noviembre) se aplica
 	//           un descuento de porcentajeDescuento
 	// Eleva la excepción InvalidParameter si precioOriginal es negativo
-	public static double PrecioFinal(double precioOriginal, double porcentajeDbescuento) throws InvalidParameterException{
+	public static double PrecioFinal(double precioOriginal, double porcentajeDbescuento) throws InvalidParameter{
 	    Calendar c = Calendar.getInstance();
 	    Date fecha = new Date();
 	    int dia = c.get(Calendar.DATE); 
@@ -20,10 +19,10 @@ public class DescuentoBlackFriday {
 	    System.out.println (fecha);
 	    
 		if(precioOriginal < 0) {
-			throw new InvalidParameterException("precioOriginal menor que 0");
+			throw new InvalidParameter("precioOriginal menor que 0");
 		}
 		if(porcentajeDbescuento < 0 || porcentajeDbescuento > 100) {
-			throw new InvalidParameterException("porcentajeDbescuento erroneo");
+			throw new InvalidParameter("porcentajeDbescuento erroneo");
 		}
 		
 		if (dia == 29 && mes == 10) {
@@ -36,7 +35,7 @@ public class DescuentoBlackFriday {
 		
 	}
 	
-	public static void main(String[] args) throws InvalidParameterException{
+	public static void main(String[] args) throws InvalidParameter{
 		System.out.println(PrecioFinal(3.0,0.0));
     }
 }

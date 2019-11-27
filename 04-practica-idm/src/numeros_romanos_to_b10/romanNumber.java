@@ -1,13 +1,11 @@
 package numeros_romanos_to_b10;
-import java.security.InvalidParameterException;
-
 
 public class romanNumber {
 
 	// Parametro: s es un numero romano
 	// Devuelve : el numeros en base 10
 	// Eleva la excepcion InvalidParameter si s no es un numero romano
-	public static int convierte(String romanNumber) throws InvalidParameterException {
+	public static int convierte(String romanNumber) throws InvalidParameter{
 		boolean first = true;
 		int decimalNumber = 0;
 		int valor = 0;
@@ -67,7 +65,7 @@ public class romanNumber {
 	}
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidParameter {
 		// TODO Auto-generated method stub
 		System.out.println(convierte("IV"));
 	}
