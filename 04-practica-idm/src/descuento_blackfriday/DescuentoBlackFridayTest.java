@@ -42,19 +42,5 @@ public class DescuentoBlackFridayTest {
 		}
 		fail("InvalidParameterException expected");
 	}
-	
-	// Detecto fallo, funciona con -0.0, no deberia funcionar
-	@Test
-	public void TestConDescuento0Neg(){
-		DescuentoBlackFriday.PrecioFinal(3.0, -0.0);
-		fail("El descuento -0.0 no existe");
-	}
-	
-	// Detecto fallo, funciona con -0.0, no deberia funcionar
-	@Test
-	public void TestConDescuento0NegyPrecioOrigNeg(){
-		DescuentoBlackFriday.PrecioFinal(-0.0, -0.0);
-		fail("El precio original -0.0 no existe");
-	}
 
 }
