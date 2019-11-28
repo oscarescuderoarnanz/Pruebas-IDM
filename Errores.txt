@@ -1,5 +1,0 @@
-Revisar codigos:
-	* Bisiestos -> exception
-	* BlackFriday -> exception
-
-Test BlackFriday
