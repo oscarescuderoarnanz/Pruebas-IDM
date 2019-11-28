@@ -58,7 +58,7 @@ public class RomanNumeralTest {
 	
 	@Test
 	public void testEntradaAscendente() throws InvalidParameter {
-		String s = "IIIV";
+		String s = "IV";
 		assertEquals("Entrada valida C", 2, romanNumber.convierte(s));
 	}
 }
