@@ -16,8 +16,23 @@ public class romanNumber {
 	    int index = 0;
 	    int index_before = 0;
 		
+	    if(RN == "" || RN == " ") {
+	    	throw new InvalidParameter("Entrada vacia");
+	    }
 		for(int i = RN.length()-1; i >= 0; i--) {
 			char convertToDecimal = romanNumber.charAt(i);
+			boolean no_es_nr = false;
+			for(int j = 0; j < Rom.length-1;j++) {
+				if(convertToDecimal == Rom[j]) {
+					no_es_nr = false;
+					break;
+				}else{
+					no_es_nr = true;
+				}
+			}
+			if(no_es_nr) {
+				throw new InvalidParameter("Entrada no valida");
+			}
 			char convertToDecimal_before = ' ';
 			
 			if(i != 0) {
@@ -67,7 +82,7 @@ public class romanNumber {
 
 	public static void main(String[] args) throws InvalidParameter {
 		// TODO Auto-generated method stub
-		System.out.println(convierte("IV"));
+		System.out.println(convierte("C"));
 	}
 
 }
